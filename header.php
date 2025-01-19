@@ -19,7 +19,7 @@
 <body>
     <main>
         <header class="header">
-            <?php $a=  $_SERVER['REQUEST_URI']; ?>
+            <?php $a =  $_SERVER['REQUEST_URI']; ?>
 
             <div class="container">
                 <div class="row">
@@ -43,15 +43,15 @@
                                 <div class="navbar-collapse justify-content-center collapse" id="navbarNav">
                                     <ul class="navbar-nav align-items-center">
                                         <li class="nav-item">
-                                            <a class="nav-link <?php if($a == "/whitekraaft/")   echo "active";?>"
+                                            <a class="nav-link <?php if ($a == "/whitekraaft/")   echo "active"; ?>"
                                                 aria-current="page" href="./">Home</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link <?php if($a == "/whitekraaft/services.php")  echo "active";?>"
+                                            <a class="nav-link <?php if ($a == "/whitekraaft/services.php")  echo "active"; ?>"
                                                 href="services.php">Our Services</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link <?php if($a == "/whitekraaft/team.php")  echo "active";?>"
+                                            <a class="nav-link <?php if ($a == "/whitekraaft/team.php")  echo "active"; ?>"
                                                 href="team.php">Our Team</a>
                                         </li>
                                         <li class="nav-item d-lg-none d-block">
@@ -59,7 +59,7 @@
                                                 data-bs-target="#hiringForm">Our Hiring</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link <?php if($a == "/whitekraaft/contact-us.php")  echo "active";?>"
+                                            <a class="nav-link <?php if ($a == "/whitekraaft/contact-us.php")  echo "active"; ?>"
                                                 href="contact-us.php">Contact Us</a>
                                         </li>
                                     </ul>
@@ -103,20 +103,20 @@
                 // Check if form is submitted and file is uploaded
                 if (isset($_POST['button']) && isset($_FILES['attachment'])) {
 
-                
-                // Load POST data from HTML form
+
+                    // Load POST data from HTML form
                     $sender_name = $_POST["fullName"]; // Sender's name
                     $jobprofile = $_POST["jobProfile"]; // Jobprofile
                     $totalExperience = $_POST["totalExperience"]; // totalExperience
                     $currentCtc = $_POST["currentCtc"]; // currentCtc
                     $expCtc = $_POST["expCtc"];
                     $noticeperiod = $_POST["noticeperiod"];
-                    $subject = $_POST["subject"]; 
-                // Define sender and recipient emails
+                    $subject = $_POST["subject"];
+                    // Define sender and recipient emails
                     $from_email = $reply_to_email; // Sender email
                     $hiring_email = 'harishpoloju@gmail.com'; // Recipient email
-                    
-                    
+
+
                     // Validate sender name (uncomment for validation)
                     // if (strlen($sender_name) < 1) {
                     //     die('Name is too short or empty!');
@@ -155,18 +155,18 @@
                     $bodyContent = "--$boundary\r\n";
                     $bodyContent .= "Content-Type: text/plain; charset=ISO-8859-1\r\n";
 
-                    $bodyContent .=   $sender_name ."\r\n";   
-                    $bodyContent .=   $jobprofile ."\r\n";  
-                    $bodyContent .=   $totalExperience ."\r\n";  
-                    $bodyContent .=   $currentCtc ."\r\n";  
-                    $bodyContent .=   $expCtc ."\r\n";  
-                    $bodyContent .=   $noticeperiod ."\r\n";  
-                $bodyContent .=" \r\n"; 
+                    $bodyContent .=   $sender_name . "\r\n";
+                    $bodyContent .=   $jobprofile . "\r\n";
+                    $bodyContent .=   $totalExperience . "\r\n";
+                    $bodyContent .=   $currentCtc . "\r\n";
+                    $bodyContent .=   $expCtc . "\r\n";
+                    $bodyContent .=   $noticeperiod . "\r\n";
+                    $bodyContent .= " \r\n";
                     //$bodyContent .= "Content-Transfer-Encoding: base64\r\n\r\n";
                     // $bodyContent .= chunk_split(base64_encode($message)); // Encode message  
-                    
+
                     // Add attachment to the email body
-                    
+
                     $bodyContent .= "--$boundary\r\n";
                     $bodyContent .= "Content-Type: $type; name=\"$name\"\r\n";
                     $bodyContent .= "Content-Disposition: attachment; filename=\"$name\"\r\n";
@@ -186,67 +186,208 @@
                         die("Sorry, the email could not be sent. Please try again.");
                     }
                 }
-            ?>
+                ?>
                 <section class="hireForm pb-5 text-center">
-                    <form class="row g-4 mx-0" enctype="multipart/form-data" method="POST" action="" data-aos="fade-up"
-                        data-aos-duration="1300">
+                    <form class="row g-4 mx-0" enctype="multipart/form-data" data-aos="fade-up"
+                        data-aos-duration="1300" id="hiringForm">
                         <div class="col-lg-12">
-                            <div class="form-outline position-relative">
+                            <div class="form-outline position-relative text-start">
                                 <label class="labelHeading">Full Name</label>
                                 <input type="text" class="form-control" id="fullName" name="fullName" required="">
+                                <span class="error-message text-danger"></span>
                             </div>
                         </div>
                         <div class="col-lg-12">
-                            <div class="form-outline position-relative">
+                            <div class="form-outline position-relative text-start">
                                 <label class="labelHeading">Job Profile</label>
                                 <input type="text" class="form-control" id="jobProfile" name="jobProfile" required="">
+                                <span class="error-message text-danger"></span>
                             </div>
                         </div>
 
                         <div class="col-lg-12">
-                            <div class="form-outline position-relative">
+                            <div class="form-outline position-relative text-start">
                                 <label class="labelHeading">Total Experience in years</label>
                                 <input type="number" class="form-control" id="totalExp" name="totalExperience"
                                     required="">
+                                <span class="error-message text-danger"></span>
                             </div>
                         </div>
 
                         <div class="col-lg-12">
-                            <div class="form-outline position-relative">
+                            <div class="form-outline position-relative text-start">
                                 <label class="labelHeading">Current CTC in INR</label>
                                 <input type="number" class="form-control" id="currentCtc" name="currentCtc" required="">
+                                <span class="error-message text-danger"></span>
                             </div>
                         </div>
 
                         <div class="col-lg-12">
-                            <div class="form-outline position-relative">
+                            <div class="form-outline position-relative text-start">
                                 <label class="labelHeading">Expected CTC in INR</label>
                                 <input type="number" class="form-control" id="expCtc" name="expCtc" required="">
+                                <span class="error-message text-danger"></span>
                             </div>
                         </div>
 
                         <div class="col-lg-12">
-                            <div class="form-outline position-relative">
+                            <div class="form-outline position-relative text-start">
                                 <label class="labelHeading">Notice period in months</label>
                                 <input type="text" class="form-control" id="noticeperiod" name="noticeperiod"
                                     required="">
+                                <span class="error-message text-danger"></span>
                             </div>
                         </div>
 
-
                         <div class="col-lg-9 mb-3">
 
-                            <div class="uploadBtn  position-relative">Upload Resume
-                                <input class="form-control" type="file" name="attachment">
+                            <div class="uploadBtn  position-relative text-start">Upload Resume
+                                <input id="WKattachement" class=" form-control" type="file" name="attachment">
+
                             </div>
+                            <span class="error-message text-danger attachemnet-error"></span>
+                            <span class="file-info text-muted">Allowed file types: .pdf, .doc, .docx. Max size: 5MB.</span>
+                        </div>
+                        <!-- <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-label="Example 20px high" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div> -->
+                        <div class="progressH mt-2" style="height: 10px;">
+                            <div class="progress-barH" role="progressbar" style="width: 0%; height:5px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         <div class="col-12 d-flex align-items-center">
                             <div class="bTn d-flex align-items-center position-relative">
                                 <span class="alignline"></span>
-                                <button type="submit" name="button" value="Submit">Submit</button>
+                                <button type="button" onclick="validateHiringForm()" name="button" value="Submit">Submit</button>
                             </div>
                         </div>
                     </form>
                 </section>
             </div>
+            <script>
+                const validateHiringForm = () => {
+                    const form = document.getElementById("hiringForm");
+                    const fields = form.querySelectorAll("[name]");
+                    let isValid = true;
+
+                    fields.forEach(field => {
+                        let errorMessage = field.parentElement.querySelector(".error-message");
+                        if (field.name === "attachment") {
+                            errorMessage = document.querySelector(".attachemnet-error");
+                        }
+
+                        // Clear previous error
+                        if (errorMessage) errorMessage.textContent = "";
+
+                        // Validation checks
+                        if (!field.value.trim()) {
+                            errorMessage.textContent = `${field.name} is required.`;
+                            isValid = false;
+                        } else if (field.name === "fullName") {
+                            // Full Name validation (letters and spaces only)
+                            const nameRegex = /^[A-Za-z\s]+$/;
+                            if (!nameRegex.test(field.value)) {
+                                errorMessage.textContent = "Full Name should contain only letters.";
+                                isValid = false;
+                            }
+                        } else if (field.name === "noticePeriod") {
+                            // Notice Period validation (numeric values only)
+                            const noticeRegex = /^[0-9]+$/;
+                            if (!noticeRegex.test(field.value)) {
+                                errorMessage.textContent = "Notice Period should be a numeric value.";
+                                isValid = false;
+                            }
+                        } else if (["totalExperience", "currentCtc", "expCtc"].includes(field.name)) {
+                            // Numeric fields validation
+                            if (field.value <= 0) {
+                                errorMessage.textContent = `${field.placeholder} must be a positive number.`;
+                                isValid = false;
+                            }
+                        }
+                    });
+
+                    // File upload validation
+                    const attachment = document.getElementById("WKattachement");
+                    const progressBar = document.querySelector(".progress-barH");
+                    const progressContainer = document.querySelector(".progressH");
+
+                    if (attachment.files.length > 0) {
+                        const file = attachment.files[0];
+                        const maxSize = 5 * 1024 * 1024; // 5MB
+
+                        if (file.size > maxSize) {
+                            alert("File size exceeds 5MB.");
+                            attachment.value = ""; // Clear the file input
+                            progressContainer.classList.add("d-none");
+                            isValid = false;
+                        } else {
+                            // Simulate file upload progress
+                            progressContainer.classList.remove("d-none");
+                            let progress = 0;
+                            const interval = setInterval(() => {
+                                progress += 20;
+                                progressBar.style.width = progress + "%";
+                                progressBar.setAttribute("aria-valuenow", progress);
+                                if (progress >= 100) {
+                                    clearInterval(interval);
+                                    alert("File uploaded successfully!");
+                                    progressContainer.classList.add("d-none");
+                                }
+                            }, 100); // Simulates upload progress every 100ms
+                        }
+                    }
+
+                    if (isValid) {
+                        alert("Form submitted successfully!");
+                        form.submit(); // Proceed with form submission
+                    }
+                };
+
+                // Handle file upload with progress bar
+                document.getElementById('WKattachement').addEventListener("change", function(e) {
+                    const file = e.target.files[0];
+                    const progressContainer = document.querySelector(".progressH")
+                    const progressBar = document.querySelector(".progress-barH")
+
+
+                    if (file) {
+                        progressContainer.classList.remove("d-none");
+                        const maxSize = 5 * 1024 * 1024; // 5MB
+
+                        if (file.size > maxSize) {
+                            alert("File size exceeds 5MB.");
+                            e.target.value = ""; // Clear the file input
+                            progressContainer.classList.add("d-none");
+                            return;
+                        }
+
+                        // Simulate upload progress
+                        let progress = 0;
+                        const interval = setInterval(() => {
+                            progress += 10;
+                            progressBar.style.width = progress + "%";
+                            progressBar.setAttribute("aria-valuenow", progress);
+                            if (progress >= 100) {
+                                clearInterval(interval);
+                                alert("File uploaded successfully!");
+                                progressContainer.classList.add("d-none");
+                            }
+                        }, 100); // Simulates upload progress every 100ms
+                    }
+                });
+
+                // Clear errors and validate live input
+                document.querySelectorAll("[name]").forEach(field => {
+                    field.addEventListener("input", () => {
+                        const errorMessage = field.parentElement.querySelector(".error-message");
+                        if (errorMessage) errorMessage.textContent = "";
+
+                        // Live input restrictions
+                        if (field.name === "fullName") {
+                            field.value = field.value.replace(/[^A-Za-z\s]/g, ""); // Letters and spaces only
+                        } else if (["totalExperience", "currentCtc", "expCtc", "noticePeriod"].includes(field.name)) {
+                            field.value = field.value.replace(/[^0-9]/g, ""); // Numbers only
+                        }
+                    });
+                });
+            </script>
         </div>

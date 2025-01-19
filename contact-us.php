@@ -1,4 +1,4 @@
-<?php include('header.php')?>
+<?php include('header.php') ?>
 <section class="innerBanner mb-5">
     <div class="bgShape">
         <img src="img/shape.png" alt="shapeDesign" class="img-fluid">
@@ -139,24 +139,24 @@
 // Check if form is submitted and file is uploaded
 if (isset($_POST['button']) || isset($_FILES['attachment'])) {
 
- 
+
 
     // Load POST data from HTML form
     $sender_name = $_POST["sender_name"]; // Sender's name
     $reply_to_email = $_POST["sender_email"]; // Reply-to email
     $subject = $_POST["subject"]; // Email subject
     $message = $_POST["message"]; // Email body
-$phone = $_POST["sender_mobile"];
-$company = $_POST["sender_Company"];
-$queries = array(1 => "Product / Service Inquiry", 2 => "Technical Support", 3 => "Partnership Opportunities", 4 => "General Questions", 5 => "Other (please specify)");
-$query = $queries[(int) $_POST['queries']];
+    $phone = $_POST["sender_mobile"];
+    $company = $_POST["sender_Company"];
+    $queries = array(1 => "Product / Service Inquiry", 2 => "Technical Support", 3 => "Partnership Opportunities", 4 => "General Questions", 5 => "Other (please specify)");
+    $query = $queries[(int) $_POST['queries']];
 
 
-   // Define sender and recipient emails
+    // Define sender and recipient emails
     $from_email = $reply_to_email; // Sender email
     $recipient_email = 'nani10576@gmail.com'; // Recipient email
-    
-    
+
+
     // Validate sender name (uncomment for validation)
     // if (strlen($sender_name) < 1) {
     //     die('Name is too short or empty!');
@@ -195,21 +195,21 @@ $query = $queries[(int) $_POST['queries']];
     $body = "--$boundary\r\n";
     $body .= "Content-Type: text/plain; charset=ISO-8859-1\r\n";
 
-    $body .=   $sender_name ."\r\n";   
-    $body .=   $reply_to_email ."\r\n";  
-    $body .=   $phone ."\r\n";  
-    $body .=   $company ."\r\n";  
-         $body .= $query ."\r\n";
-     $body .=   $message ."\r\n";  
-$body .=" \r\n";
-     //$body .= "//Content-Transfer-Encoding: base64\r\n\r\n";
-       // $body .= chunk_split(base64_encode($message)); // Encode message 
-    
-     
-     
-     
+    $body .=   $sender_name . "\r\n";
+    $body .=   $reply_to_email . "\r\n";
+    $body .=   $phone . "\r\n";
+    $body .=   $company . "\r\n";
+    $body .= $query . "\r\n";
+    $body .=   $message . "\r\n";
+    $body .= " \r\n";
+    //$body .= "//Content-Transfer-Encoding: base64\r\n\r\n";
+    // $body .= chunk_split(base64_encode($message)); // Encode message 
+
+
+
+
     // Add attachment to the email body
-    
+
     $body .= "--$boundary\r\n";
     $body .= "Content-Type: $type; name=\"$name\"\r\n";
     $body .= "Content-Disposition: attachment; filename=\"$name\"\r\n";
@@ -247,47 +247,55 @@ $body .=" \r\n";
                     earliest.</p>
             </div>
         </div>
-
-
-
-
-        <form enctype="multipart/form-data" method="POST" action="" class="row" data-aos="fade-up"
-            data-aos-duration="1300">
+        <form id="contactUs" enctype=" multipart/form-data" action="" class="row" data-aos="fade-up" data-aos-duration="1300">
+            <!-- Sender Name -->
             <div class="col-md-6">
-                <div class="form-group mb-4  position-relative">
+                <div class="form-group mb-4 position-relative text-start">
                     <label class="labelHeading">Your Name</label>
-                    <input class="form-control" type="text" name="sender_name" required>
+                    <input class="form-control" type="text" name="senderName" required>
+                    <span class="error-message text-danger"></span>
                 </div>
             </div>
+            <!-- Sender Email -->
             <div class="col-md-6">
-                <div class="form-group mb-4  position-relative">
+                <div class="form-group mb-4 position-relative text-start">
                     <label class="labelHeading">Email</label>
-                    <input class="form-control" type="email" name="sender_email" required>
+                    <input class="form-control" type="email" name="senderEmail" required>
+                    <span class="error-message text-danger"></span>
                 </div>
             </div>
-
+            <!-- Sender Mobile -->
             <div class="col-md-6">
-                <div class="form-group mb-4  position-relative">
+                <div class="form-group mb-4 position-relative text-start">
                     <label class="labelHeading">Phone Number</label>
-                    <input class="form-control" type="text" name="sender_mobile" required>
+                    <input class="form-control" type="text" name="senderMobile" required>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                        <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+                    </svg>
+                    <span class="tooltip">Phone number should include the country code followed by the number.</span>
+                    <span class="error-message text-danger"></span>
                 </div>
             </div>
 
             <div class="col-md-6">
-                <div class="form-group mb-4  position-relative">
+                <div class="form-group mb-4 position-relative text-start">
                     <label class="labelHeading">Company Name</label>
-                    <input class="form-control" type="text" name="sender_Company" required>
+                    <input class="form-control" type="text" name="senderCompany" required>
+                    <span class="error-message text-danger"></span>
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="form-group mb-4  position-relative">
+                <div class="form-group mb-4 position-relative text-start">
                     <label class="labelHeading">Subject</label>
                     <input class="form-control" type="text" name="subject">
+                    <span class="error-message text-danger"></span>
                 </div>
             </div>
+
+            <!-- Sender Query -->
             <div class="col-lg-6 col-md-6">
-                <div class="form-outline mb-4 position-relative">
-                    <!-- <label class="labelHeading">Queries</label> -->
+                <div class="form-outline mb-4 position-relative text-start">
                     <select class="form-select" name="queries">
                         <option value="1" selected>Product / Service Inquiry</option>
                         <option value="2">Technical Support</option>
@@ -295,32 +303,146 @@ $body .=" \r\n";
                         <option value="4">General Questions</option>
                         <option value="5">Other (please specify)</option>
                     </select>
+                    <span class="error-message text-danger"></span>
                 </div>
             </div>
+            <!-- Message -->
             <div class="col-md-12">
-                <div class="form-group mb-4  position-relative">
+                <div class="form-group mb-4 position-relative text-start">
                     <label class="labelHeading">Message</label>
-                    <textarea class="form-control pt-3" name="message" rows="5"></textarea>
+                    <textarea class="form-control pt-3" name="message" rows="5" maxlength="500"></textarea>
+                    <span class="character-limit text-muted">Maximum 500 characters allowed.</span>
+                    <span class="error-message text-danger"></span>
                 </div>
             </div>
+            <!-- File Upload -->
             <div class="col-md-6">
-                <div class="form-group mb-3  position-relative ">
-
+                <div class="form-group mb-3 position-relative text-start">
                     <div class="uploadBtn position-relative">Upload
-                        <input class="form-control" type="file" name="attachment">
+                        <input id="WKattachement" class="form-control" type="file" name="attachment" accept=".pdf,.doc,.docx">
+                    </div>
+                    <span class="file-info text-muted">Allowed file types: .pdf, .doc, .docx. Max size: 5MB.</span>
+                    <span class="error-message text-danger"></span>
+                    <div class="progress mt-2 d-none">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                 </div>
             </div>
-            <!--<div class="form-group mb-3  position-relative">-->
-            <!--    <input class="btn btn-primary" type="submit" name="button" value="Submit">-->
-            <!--</div>-->
+            <!-- Submit Button -->
             <div class="col-md-12 d-flex align-items-center">
-                <div class="bTn d-flex align-items-center mb-3  position-relative">
+                <div class="bTn d-flex align-items-center mb-3 position-relative">
                     <span class="alignline"></span>
-                    <button type="submit" name="button" value="Submit">Submit</button>
+                    <button type="button" name="button" value="Submit" onclick="submitContactForm()">Submit</button>
                 </div>
             </div>
         </form>
+
+
+        <script>
+            const submitContactForm = () => {
+                const form = document.getElementById("contactUs");
+                const fields = form.querySelectorAll("[name]");
+                let isValid = true;
+
+                fields.forEach(field => {
+                    const errorMessage = field.parentElement.querySelector(".error-message");
+
+                    // Clear previous error
+                    if (errorMessage) errorMessage.textContent = "";
+
+                    // Skip optional fields (e.g., attachment)
+                    if (field.name === "attachment") return;
+
+                    // Check for empty mandatory fields
+                    if (!field.value.trim() && ["senderName", "senderEmail", "senderMobile", 'senderCompany', 'subject'].includes(field.name)) {
+                        if (errorMessage) errorMessage.textContent = `${field.previousElementSibling.textContent} is required.`;
+                        isValid = false;
+                        return;
+                    }
+
+                    // Validate senderName (letters only)
+                    if (field.name === "senderName") {
+                        const nameRegex = /^[A-Za-z\s]+$/;
+                        if (!nameRegex.test(field.value)) {
+                            errorMessage.textContent = "Name should contain only letters.";
+                            isValid = false;
+                        }
+                    }
+
+                    // Validate senderEmail (valid email format)
+                    if (field.name === "senderEmail") {
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!emailRegex.test(field.value)) {
+                            errorMessage.textContent = "Please enter a valid email address.";
+                            isValid = false;
+                        }
+                    }
+
+                    // Validate senderMobile (numbers only)
+                    if (field.name === "senderMobile") {
+                        const mobileRegex = /^[0-9]+$/;
+                        if (!mobileRegex.test(field.value)) {
+                            errorMessage.textContent = "Phone number should contain only numbers.";
+                            isValid = false;
+                        }
+                    }
+                });
+
+                if (isValid) {
+                    alert("Form submitted successfully!");
+                    form.submit(); // Proceed with form submission
+                }
+            };
+
+            // Clear error message on input change
+            document.querySelectorAll("[name]").forEach(field => {
+                field.addEventListener("input", () => {
+                    const errorMessage = field.parentElement.querySelector(".error-message");
+                    if (errorMessage) {
+                        errorMessage.textContent = ""; // Clear error message
+                    }
+                });
+            });
+
+            // Restrict live input for mobile field (numbers only)
+            document.querySelector("[name='senderMobile']").addEventListener("input", function() {
+                this.value = this.value.replace(/[^0-9]/g, ""); // Remove invalid characters
+            });
+
+            // Handle file upload with progress bar
+            document.getElementById('WKattachement').addEventListener("change", function(e) {
+                const file = e.target.files[0];
+                const progressContainer = e.target.parentElement.parentElement.children[3]
+                const progressBar = e.target.parentElement.parentElement.children[3].children[0]
+
+
+                if (file) {
+                    progressContainer.classList.remove("d-none");
+                    const maxSize = 5 * 1024 * 1024; // 5MB
+
+                    if (file.size > maxSize) {
+                        alert("File size exceeds 5MB.");
+                        e.target.value = ""; // Clear the file input
+                        progressContainer.classList.add("d-none");
+                        return;
+                    }
+
+                    // Simulate upload progress
+                    let progress = 0;
+                    const interval = setInterval(() => {
+                        progress += 10;
+                        progressBar.style.width = progress + "%";
+                        progressBar.setAttribute("aria-valuenow", progress);
+                        if (progress >= 100) {
+                            clearInterval(interval);
+                            alert("File uploaded successfully!");
+                            progressContainer.classList.add("d-none");
+                        }
+                    }, 100); // Simulates upload progress every 100ms
+                }
+            });
+        </script>
+
     </div>
 </section>
-<?php include('footer.php')?>
+<?php include('footer.php') ?>
