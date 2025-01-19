@@ -88,7 +88,9 @@
   overflow: hidden;
   text-align: center;
   width: 210px;
-  margin: 0 auto;
+  @media (max-width: 576px) {
+    margin: 0 auto;
+  }
   img {
     width: 100%;
   }

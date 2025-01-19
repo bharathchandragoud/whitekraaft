@@ -26,6 +26,7 @@
       background: #f0c044;
       right: -23%;
       transform: rotate(30deg);
+      opacity: 0.55;
     }
   }
   &:after {
@@ -50,6 +51,7 @@
       right: -20%;
       top: 55%;
       transform: rotate(30deg);
+      opacity: 0.65;
     }
   }
   .container {
@@ -66,7 +68,7 @@
       transform: rotate(45deg);
       z-index: 0;
       @media (max-width: 769px) {
-        z-index: -3;
+        z-index: -1;
         transform: rotate(30deg);
       }
     }

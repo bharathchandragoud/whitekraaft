@@ -124,7 +124,7 @@
     </div>
 </section>
 
-<section class="weaRe py-5 position-relative mb-5">
+<section class="weaRe py-lg-5 position-relative mb-lg-0 mb-5">
     <div class="bgdots">
         <img src="img/bgDots.png" alt="bgDots" class="img-fluid">
     </div>
@@ -240,12 +240,15 @@
                     <span class="alignline"></span>
                     <h6>What We Offer</h6>
                 </div>
-                <h2 data-aos="fade-up" data-aos-duration="1300">Our Serivces</h2>
-                <p class="col-lg-6 m-auto" data-aos="fade-up" data-aos-duration="1800">To be the most successful
+                <h2 data-aos="fade-up" data-aos-duration="1300">Our Services</h2>
+                <!-- <p class="col-lg-6 m-auto" data-aos="fade-up" data-aos-duration="1800">To be the most successful
                     company in
                     helping our customers apply technology &
                     resourcing solutions to
-                    solve their problems.</p>
+                    solve their problems.</p> -->
+
+                <p class="col-lg-6 m-auto" data-aos="fade-up" data-aos-duration="1800">We provide End to End Software
+                    Solutions & Maintenance, Recruitment Placement & Staff Augmentation </p>
 
             </div>
         </div>
@@ -316,7 +319,7 @@
                         <p class="backText">
                             We believe in partnering with you throughout the implementation life
                             cycle including software maintenance to ensure bug fixes, patch
-                            updates, optimization withing predefined SLAs to make your digital
+                            updates, optimization within predefined SLAs to make your digital
                             experience hassle free.
                         </p>
                     </div>
@@ -382,30 +385,48 @@
                 <h2 data-aos="fade-up" data-aos-duration="1300">Our Customers</h2>
             </div>
         </div>
-        <div class="customerSlide" data-aos="fade-up" data-aos-duration="1300">
-            <div>
-                <img src="img/logo1.jpg" alt="customer Logo">
+        <div class="position-relative sliderCustomer">
+            <div class="customerSlide" data-aos="fade-up" data-aos-duration="1300">
+                <div>
+                    <img src="img/logo1.jpg" alt="customer Logo">
+                </div>
+                <div>
+                    <img src="img/logo2.jpg" alt="customer Logo">
+                </div>
+                <div>
+                    <img src="img/logo3.jpg" alt="customer Logo">
+                </div>
+                <div>
+                    <img src="img/logo4.jpg" alt="customer Logo">
+                </div>
+                <div>
+                    <img src="img/logo5.jpg" alt="customer Logo">
+                </div>
+                <div>
+                    <img src="img/logo6.jpg" alt="customer Logo">
+                </div>
+                <div>
+                    <img src="img/logo7.jpg" alt="customer Logo">
+                </div>
+                <div>
+                    <img src="img/logo8.png" alt="customer Logo">
+                </div>
             </div>
-            <div>
-                <img src="img/logo2.jpg" alt="customer Logo">
-            </div>
-            <div>
-                <img src="img/logo3.jpg" alt="customer Logo">
-            </div>
-            <div>
-                <img src="img/logo4.jpg" alt="customer Logo">
-            </div>
-            <div>
-                <img src="img/logo5.jpg" alt="customer Logo">
-            </div>
-            <div>
-                <img src="img/logo6.jpg" alt="customer Logo">
-            </div>
-            <div>
-                <img src="img/logo7.jpg" alt="customer Logo">
-            </div>
-            <div>
-                <img src="img/logo8.png" alt="customer Logo">
+            <div class="d-flex gap-3 arrowsDiv">
+                <div class="Cprev">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#797979"
+                        class="bi bi-chevron-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                    </svg>
+                </div>
+                <div class="Cnext">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#797979"
+                        class="bi bi-chevron-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                    </svg>
+                </div>
             </div>
         </div>
 

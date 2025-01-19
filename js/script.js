@@ -27,14 +27,16 @@ $(".one-time").slick({
 $(".customerSlide").slick({
   autoplay: true,
   infinite: true,
-  speed: 1000,
   slidesToShow: 5,
   speed: 2000,
   loop: true,
-  arrows: false,
+  arrows: true,
   cssEase: "linear",
-  pauseOnHover: true,
-  autoplaySpeed: false,
+  // pauseOnHover: true,
+  autoplaySpeed: 1000,
+  focusOnSelect: false,
+  prevArrow: $(".Cprev"),
+  nextArrow: $(".Cnext"),
   responsive: [
     {
       breakpoint: 1008,

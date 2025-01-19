@@ -5,6 +5,9 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
 }
+.v-hidden {
+  visibility: hidden;
+}
 .container {
   z-index: 9;
 }

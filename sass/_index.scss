@@ -407,6 +407,48 @@
       }
     }
   }
+  .sliderCustomer {
+    .arrowsDiv {
+      position: absolute;
+      width: 100%;
+      justify-content: space-between;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+      .Cprev {
+        left: -1%;
+        position: relative;
+        border-radius: 50px;
+        border: 1px solid #f1c144;
+        width: 25px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        background: #f1c144;
+        justify-content: center;
+        cursor: pointer;
+      }
+      .Cnext {
+        right: -1%;
+        position: relative;
+        border-radius: 50px;
+        border: 1px solid #f1c144;
+        width: 25px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        background: #f1c144;
+        justify-content: center;
+        cursor: pointer;
+      }
+    }
+    &:hover {
+      .arrowsDiv {
+        opacity: 1;
+      }
+    }
+  }
 }
 .customer {
   // box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
