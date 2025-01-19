@@ -263,6 +263,7 @@
                     </form>
                 </section>
             </div>
+
             <script>
                 const validateHiringForm = () => {
                     const form = document.getElementById("hiringForm");
