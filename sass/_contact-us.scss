@@ -1,0 +1,39 @@
+.wapper_address {
+  .bgdots {
+    position: absolute;
+    top: -50%;
+    opacity: 0.6;
+    z-index: -1;
+  }
+  .c-addr {
+    box-shadow: 1px 3px 6px 6px rgba(204, 204, 204, 0.5607843137);
+    border: 1px solid #f1c144;
+    border-top: 4px solid #f1c144;
+    border-bottom: 4px solid #f1c144;
+    text-align: center;
+    min-height: 170px;
+    box-sizing: border-box;
+    padding: 20px 5px 20px;
+    border-radius: 11px;
+    margin-bottom: 15px;
+    background: #fff;
+    svg {
+      margin-bottom: 15px;
+    }
+    h3 {
+      font-size: 17px;
+      font-weight: 600;
+    }
+    p {
+      margin-bottom: 0.2rem;
+      a {
+        color: #797979;
+      }
+    }
+  }
+}
+.successMsg {
+  text-align: center;
+  font-size: 18px;
+  color: #07b07e;
+}

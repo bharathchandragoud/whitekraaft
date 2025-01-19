@@ -1,0 +1,161 @@
+body {
+  font-family: "Lato", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "League Spartan", serif;
+  font-weight: 400;
+}
+p {
+  font-size: $clamp16;
+  color: #797979;
+}
+.cursor {
+  cursor: pointer;
+}
+.navbar-toggler {
+  position: absolute;
+  right: 1%;
+  top: 30%;
+  border-color: #fff;
+  transform: translateY(-12%);
+}
+a {
+  text-decoration: none;
+}
+
+.header {
+  // border-bottom: 1px solid #e5e5e5;
+  position: relative;
+  border-top: 8px solid #f0cc14;
+  z-index: 99;
+  // border-top-left-radius: 30px;
+  // border-top-right-radius: 30px;
+  // &:after {
+  //   top: 0;
+  //   content: "";
+  //   background: #f0cc14;
+  //   position: absolute;
+  //   left: 0;
+  //   display: block;
+  //   width: calc(100% - 78%);
+  //   height: 100%;
+  //   z-index: -1;
+  //   @media (max-width: 991px) {
+  //     width: calc(100% - 25%);
+  //   }
+  // }
+  @media (max-width: 991px) {
+    border-top: 8px solid #f0cc14;
+    border-top-left-radius: unset;
+    border-top-right-radius: unset;
+    .navbar-toggler {
+      width: 22%;
+      text-align: end;
+      height: 100%;
+    }
+  }
+  .logo {
+    background: #f0cc14;
+    padding: 0px 37px 18px 37px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    @media (max-width: 991px) {
+      // padding: 15px 15px;
+      box-sizing: border-box;
+      width: calc(100% - 48%);
+      // background: none;
+      background: #f0cc14;
+      padding: 15px 37px 18px 37px;
+      // border-bottom-left-radius: 30px;
+      // border-bottom-right-radius: 30px;
+    }
+  }
+  .navbar {
+    border-right: 1px solid #e5e5e5;
+    @media (max-width: 991px) {
+      position: absolute;
+      width: 100%;
+      background: #fff;
+      // box-shadow: 2px 20px 20px 5px #0a0a0a94;
+      left: 0;
+      .navbar-collapse {
+        box-shadow: 0px 20px 12px 0px rgba(10, 10, 10, 0.5803921569);
+      }
+    }
+    li {
+      margin: 0 10px;
+      a {
+        font-size: $clamp18;
+        color: #000;
+        text-decoration: none;
+        font-weight: 500;
+        font-family: "League Spartan", serif;
+        padding: 20px 0;
+        position: relative;
+        &:after {
+          content: "";
+          background: transparent;
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 4px;
+          left: 0;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+        }
+        &.active,
+        &:hover {
+          color: #f1c144;
+          &:after {
+            background: #f1c144;
+          }
+        }
+      }
+    }
+  }
+  // .hireprofiel {
+  //   background: #f1c144;
+  //   padding: 0 20px;
+  //   border-radius: 5px;
+  //   a {
+  //     font-size: $clamp15;
+  //     color: #07ae81;
+  //     text-decoration: none;
+  //     font-weight: 500;
+  //     font-family: "League Spartan", serif;
+  //   }
+
+  // }
+  .bTn {
+    &:hover {
+      .alignline {
+        width: 94px;
+      }
+    }
+  }
+  &.headerSticky {
+    position: fixed !important;
+    background: #f4f3ef;
+    box-shadow: 2px 2px 6px 6px #00000026;
+    top: 0;
+    width: 100%;
+    .logo {
+      border-bottom-left-radius: unset;
+      border-bottom-right-radius: unset;
+    }
+  }
+}
+// .offcanvas {
+//   width: 99vw !important;
+// }
